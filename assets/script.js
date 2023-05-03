@@ -40,7 +40,8 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "https://unsplash.it/300/300?image=20" 
+            //TO DO: REMOVE LINK 
         },
         "likes": 56,
         "created": "2021-04-03"
@@ -133,3 +134,4 @@ postList.innerHTML +=
 </div>
 `
 }
+
