@@ -135,3 +135,11 @@ postList.innerHTML +=
 `
 }
 
+// Like button
+
+const likeBtn = document.querySelector(".like-button")
+
+
+likeBtn.addEventListener("click", function() {
+    console.log("PRESSED")
+})
