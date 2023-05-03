@@ -123,7 +123,7 @@ postList.innerHTML +=
             <div class="likes__cta">
                 <div class="like-button  js-like-button"  data-postid="${posts[i].id}" id="btn-${posts[i].id}">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                    <span class="like-button__label">Mi Piace</span>
+                    <span class="like-button__label" id="span-${posts[i].id}"></span>
                 </div>
             </div>
             <div class="likes__counter">
@@ -136,10 +136,16 @@ postList.innerHTML +=
 }
 
 // Like button
-for (i=0; i < posts.length; i++) {   
-    let likeBtn = document.getElementById(`btn-${posts[i].id}`); 
-
+for (i=0; i < posts.length; i++) {  
+ const likeBtn = document.getElementById(`btn-${posts[i].id}`); 
+ let likeSpan = document.getElementById(`span-${posts[i].id}`);
+ likeSpan.innerHTML = `Mi Piace`;
     likeBtn.addEventListener("click", function() {
        likeBtn.classList.toggle("like-button--liked"); 
+       if (likeBtn.classList.contains("like-button--liked")) {
+        likeSpan.innerHTML = `Non Mi Piace Più`
+    } else {
+        likeSpan.innerHTML = `Mi Piace`
+    }
     })
 }
