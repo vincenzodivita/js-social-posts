@@ -121,10 +121,10 @@ postList.innerHTML +=
     <div class="post__footer">
         <div class="likes js-likes">
             <div class="likes__cta">
-                <a class="like-button  js-like-button" href="#" data-postid="1">
+                <div class="like-button  js-like-button"  data-postid="${posts[i].id}" id="btn-${posts[i].id}">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                     <span class="like-button__label">Mi Piace</span>
-                </a>
+                </div>
             </div>
             <div class="likes__counter">
                 Piace a <b id="like-counter-1" class="js-likes-counter">${posts[i].likes}</b> persone
@@ -136,10 +136,10 @@ postList.innerHTML +=
 }
 
 // Like button
+for (i=0; i < posts.length; i++) {   
+    let likeBtn = document.getElementById(`btn-${posts[i].id}`); 
 
-const likeBtn = document.querySelector(".like-button")
-
-
-likeBtn.addEventListener("click", function() {
-    console.log("PRESSED")
-})
+    likeBtn.addEventListener("click", function() {
+       likeBtn.classList.toggle("like-button--liked"); 
+    })
+}
